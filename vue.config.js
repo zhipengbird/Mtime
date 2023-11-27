@@ -12,7 +12,7 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '/live': {
-        target: 'http://live-api-m.mtime.com',
+        target: 'https://live-api-m.mtime.com',
         ws: true,
         changeOrigin: true,
         pathRewrite: {
@@ -20,21 +20,21 @@ module.exports = defineConfig({
         }
       },
       '/video': {
-        target: 'http://front-gateway.mtime.com',
+        target: 'https://front-gateway.mtime.com',
         ws: true,
         changeOrigin: true,
         pathRewrite: {
           '^/video': ''
         }
       },
-        '/download': {
-          target: 'https://vfx.mtime.cn/',
-          ws: true,
-          changeOrigin: true,
-          pathRewrite: {
-            '^/download': '' 
-       }
-        },
+      '/download': {
+        target: 'https://vfx.mtime.cn/',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/download': ''
+        }
+      },
 
     }
   }
